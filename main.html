@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heart Cursor Love Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6e6, #fff0f5);
+      overflow: hidden;
+      height: 100vh;
+
+      
+      cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAClUlEQVRYR+2XwU3DMBRFXw4gA8IB4AHSAHgAdgAdgAdgA+gB2AB2AB2AB2OekcJmFjM0WekjdXXrRkcy2HgAi8BPXHV86PwBkc5Af2wr7ZsfgMxgCNA7Y9RJP9pXHkGm+LP+9c+Jr8Jmm+P7yV9T78XTPC6I8BzOESQhSAA4wBQDGQAPDRP8+LXO1mG4Kp8t6QH4g2QQ8UI7NIBIWIOpHMlyKf6AKwNDQKyz9sK1BKg8XAMNo7K8R2W26A+wE4hoD1bhBl+Yd+GZA2QG7Y4Ai5UNtFsN2C3vDaTcXtLVkAhx6gG5CUUzAlwJYxfNgrgWwLJYc/5tvMpBMCPZ2o9A2kByi0GEcABh4FuGSQy8CWqOMdxQRXbUCb7FAL1ATC1wCKArl4irFV1WrIMfADeWZbOET3lfzXP3Ls0g7XbEOvRGdgu5+hdsS8AlngH0KsGS1ZzvTqWc8WlzGVYbG10LgKeAAAAAElFTkSuQmCC') 16 16, auto;
+    }
+
+    .cursor-heart {
+      position: absolute;
+      font-size: 18px;
+      color: #ff4d6d;
+      pointer-events: none;
+      animation: floatUp 1s ease-out forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(1.5);
+      }
+    }
+
+    .content {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+    .heart-container {
+  width: 300px;
+  height: 270px;
+  background: #ffccd5;
+  clip-path: path("M150 270 C-20 150, 0 30, 150 90 C300 30, 320 150, 150 270 Z");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  animation: fadeInOut 4s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(255, 100, 130, 0.5);
+}
+
+.heart-text {
+  text-align: center;
+  color: #b30047;
+  padding: 10px;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+  <div class="heart-text">
+    <h1> Raj ❤️ poorvi</h1>
+    <p>Made with love (HEHEE)</p>
+  </div>
+</div>
+
+
+
+  <script>
+    document.addEventListener("mousemove", function(e) {
+      const heart = document.createElement("div");
+      heart.classList.add("cursor-heart");
+      heart.innerText = "❤️";
+      heart.style.left = e.pageX + "px";
+      heart.style.top = e.pageY + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
